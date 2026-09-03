@@ -1,0 +1,25 @@
+# Dependencies
+frontend/node_modules/
+backend/node_modules/
+
+# Build folders
+frontend/dist/
+frontend/build/
+backend/dist/
+
+# Environment files
+frontend/.env
+frontend/.env.*
+backend/.env
+backend/.env.*
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
