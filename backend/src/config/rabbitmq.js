@@ -1,54 +1,59 @@
 import amqp from 'amqplib';
 import { ApiError } from '../utils/errorApi.js';
 import { EMAIL_DLX } from '../constants/queue.js';
+
 let channel = null;
 let connection = null;
+
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-const getRabbitMQConfig = () => ({
-    protocol: 'amqp',
-    hostname: process.env.RABBITMQ_HOST_NAME || 'rabbitmq',
-    port: process.env.RABBITMQ_PORT ? parseInt(process.env.RABBITMQ_PORT, 10) : 5672,
-    username: process.env.RABBITMQ_DEFAULT_USER || 'guest',
-    password: process.env.RABBITMQ_DEFAULT_PASS || 'guest',
-    heartbeat: 30
-});
+
+const getRabbitMQConfig = () => {
+    return process.env.RABBITMQ_URL;
+};
+
 const connectRabbitMQ = async () => {
     if (connection && channel) {
-        console.log('RabbitMQ already connected');
+        console.log("RabbitMQ already connected");
         return channel;
     }
 
-    const options = getRabbitMQConfig();
+    const rabbitMQUrl = getRabbitMQConfig();
     const maxAttempts = 3;
 
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
         try {
-            connection = await amqp.connect(options);
+            connection = await amqp.connect(rabbitMQUrl);
+
             channel = await connection.createChannel();
 
-            connection.on('error', (err) => {
-                console.error('RabbitMQ connection error:', err);
-                channel = null;
+            connection.on("error", (err) => {
+                console.error("RabbitMQ connection error:", err);
                 connection = null;
+                channel = null;
             });
 
-            connection.on('close', () => {
-                console.warn('RabbitMQ connection closed');
-                channel = null;
+            connection.on("close", () => {
+                console.warn("RabbitMQ connection closed");
                 connection = null;
+                channel = null;
             });
 
-            console.log('Connected to RabbitMQ at', options.hostname);
+            console.log("✅ Connected to RabbitMQ");
+
             return channel;
         } catch (err) {
-            const message = err && err.message ? err.message : String(err);
-            console.warn(`RabbitMQ connect attempt ${attempt} failed; continuing without RabbitMQ:`, message);
+            console.warn(
+                `RabbitMQ connection attempt ${attempt} failed:`,
+                err.message
+            );
+
             if (attempt === maxAttempts) {
-                channel = null;
                 connection = null;
+                channel = null;
                 return null;
             }
-            await wait(1000 * attempt);
+
+            await wait(attempt * 1000);
         }
     }
 

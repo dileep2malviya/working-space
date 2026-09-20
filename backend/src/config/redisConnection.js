@@ -1,20 +1,14 @@
 import { Redis } from "ioredis";
 import { ApiError } from "../utils/errorApi.js";
-const host = process.env.REDIS_HOST || "127.0.0.1";
-const port = process.env.REDIS_PORT
-    ? parseInt(process.env.REDIS_PORT, 10)
-    : 6379;
-// Redis configuration - reusable for all Redis clients
 const redisConfig = {
-    host,
-    port,
-    retryStrategy: (times) => {
-        const delay = Math.min(times * 50, 2000);
-        return delay;
-    },
+    lazyConnect: true,
     maxRetriesPerRequest: 3,
     enableReadyCheck: false,
+    retryStrategy: (times) => {
+        return Math.min(times * 50, 2000);
+    },
 };
+
 let redisClient = null;
 let isConnected = false;
 export async function connectRedis() {
@@ -23,7 +17,7 @@ export async function connectRedis() {
         return;
     }
     try {
-        redisClient = new Redis(redisConfig);
+        redisClient = new Redis(process.env.REDIS_URL,redisConfig);
         await redisClient.ping();
         isConnected = true;
         console.log("Redis connected successfully");

@@ -4,15 +4,12 @@ import { ApiError } from '../utils/errorApi.js';
 import { Redis } from 'ioredis';
 import { isConnected, redisConfig } from '../config/redisConnection.js';
 
-const host = process.env.REDIS_HOST || "127.0.0.1";
-const port = process.env.REDIS_PORT
-    ? parseInt(process.env.REDIS_PORT, 10)
-    : 6379;
-
-export const redisClientForLimit = new Redis({
-    host: host,
-    port: port,
+export const redisClientForLimit = new Redis(process.env.REDIS_URL, {
+    maxRetriesPerRequest: 3,
+    enableReadyCheck: false,
+    retryStrategy: (times) => Math.min(times * 50, 2000),
 });
+
 
 const rateLimit = new RateLimiterRedis({
     storeClient: isConnected ? redisConfig : redisClientForLimit,
