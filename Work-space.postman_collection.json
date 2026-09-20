@@ -1,0 +1,1277 @@
+{
+  "info": {
+    "_postman_id": "4204a3d6-77a2-4d96-9814-96fdffbd4521",
+    "name": "Work-space",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14848294"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "verify",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"dileep2malviya@gmail.com\",\r\n    \"otp\":\"611026\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/verify",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "verify"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "send-verification-otp",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"dileep2malviya@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/send-verification-otp",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "send-verification-otp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "firstName",
+                  "value": "dileep",
+                  "type": "text",
+                  "uuid": "6c53029a-e56d-4856-befe-a5755f0ce962"
+                },
+                {
+                  "key": "lastName",
+                  "value": "lohar",
+                  "type": "text",
+                  "uuid": "cab89939-5dbb-4bcb-81bf-f6a1e3b1f648"
+                },
+                {
+                  "key": "username",
+                  "value": "dileep2lohar",
+                  "type": "text",
+                  "uuid": "72b16917-b804-4f3d-94b6-cef4ad931275"
+                },
+                {
+                  "key": "email",
+                  "value": "dileep2developer@gmail.com",
+                  "type": "text",
+                  "uuid": "69c4d627-01bd-40d3-a045-210ced86c925"
+                },
+                {
+                  "key": "password",
+                  "value": "Dileep@123",
+                  "type": "text",
+                  "uuid": "ecb56fb1-4882-412c-8a84-ce580c9999ac"
+                },
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "uuid": "8fc31950-cf63-401c-9f65-c7cddf2d22c9",
+                  "src": "postman-cloud:///1f176038-5e31-4fb0-a13e-d2f30902ead4"
+                },
+                {
+                  "key": "role",
+                  "value": "member",
+                  "type": "text",
+                  "uuid": "4257616c-9198-4a49-b640-f41f545f9b51"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"dileep2malviya@gmail.com\",\r\n    \"password\": \"Dileep@1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/user/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forgot-password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"dileep2malviya@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/forgot-password",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "forgot-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verify-forgot-password-email",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"dileep2malviya@gmail.com\",\r\n    \"otp\": \"632919\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/verify-forgot-password-email",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "verify-forgot-password-email"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset-password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"newPassword\": \"Dileep@1123567\",\r\n    \"confirmPassword\": \"Dileep@1123567\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/reset-password",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change-password",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhNmRmMjI5OGI4OWI5MTkzOGQxYTc2OSIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIn0sImlhdCI6MTc4NTc4ODI3NywiZXhwIjoxNzg1Nzg5MTc3fQ.tKR6kvwHlYmotI4r1jmLgBGRrnFxEH9RjhcEKxBhBiE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"currentPassword\": \"Dileep@12345\",\r\n    \"newPassword\": \"Dileep@1234\",\r\n    \"confirmPassword\": \"Dileep@1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/change-password",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "change-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout-user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhNmRmMjI5OGI4OWI5MTkzOGQxYTc2OSIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIn0sImlhdCI6MTc4NTc4ODQ3NywiZXhwIjoxNzg1Nzg5Mzc3fQ.ChNyvjVsS8x87dZYHd8x3oUsL1YUa5YN4Yfw2f-fHCc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/logout-user",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "logout-user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-all-users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhNzMwZjRlOGY3Njc2ZjcxYmViMjhiZSIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIn0sImlhdCI6MTc4NTkzNzM4OSwiZXhwIjoxNzg1OTM4Mjg5fQ.KUcvc10mmyuRFEItfUBNGBD0agb4dlZYrcDXsordkdA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/get-all-users?search=dileep9maviya",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "get-all-users"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "dileep9maviya"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-userById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhNmRmMjI5OGI4OWI5MTkzOGQxYTc2OSIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIn0sImlhdCI6MTc4NTc4ODQ3NywiZXhwIjoxNzg1Nzg5Mzc3fQ.ChNyvjVsS8x87dZYHd8x3oUsL1YUa5YN4Yfw2f-fHCc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/get-userById/6a732a0e270b36447dea40b1",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "get-userById",
+                "6a732a0e270b36447dea40b1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Bulk user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhNmRmMjI5OGI4OWI5MTkzOGQxYTc2OSIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIn0sImlhdCI6MTc4NTc4ODQ3NywiZXhwIjoxNzg1Nzg5Mzc3fQ.ChNyvjVsS8x87dZYHd8x3oUsL1YUa5YN4Yfw2f-fHCc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n     \"userIds\" : [\r\n                    \"6a84a52eebe36d7b680b1455\",\r\n                    \"6a732a0e270b36447dea40b1\"\r\n                ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/get-userById/6a732a0e270b36447dea40b1",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "get-userById",
+                "6a732a0e270b36447dea40b1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "health",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"dileep2malviya@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:80/health",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "80",
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-user-profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhNzM0M2ViYTBlMTAwYWZjMzU5NWNkMiIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIn0sImlhdCI6MTc4NTkzODk5NywiZXhwIjoxNzg1OTM5ODk3fQ.uRHJDVZYxOSGAnvJ9EebibnxHIYhsq8wwLM_7_0ZZZ4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"firstName\",\r\n    \"lastName\": \"lastName\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{userUrl}}/update-user-profile",
+              "host": [
+                "{{userUrl}}"
+              ],
+              "path": [
+                "update-user-profile"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Space",
+      "item": [
+        {
+          "name": "create space",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-101",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801",
+                  "disabled": true
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (7).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/space",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "space"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get dropdown",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{baseUrl}}/space/dropdown",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "space",
+                "dropdown"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update space",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{worktoken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-102",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801",
+                  "disabled": true
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (6).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/space/update/6aaaf137d38311958019bc02",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "space",
+                "update",
+                "6aaaf137d38311958019bc02"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete space",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhYTlhNjVmMDhiOTljYjNjYjNkYWI4ZCIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc4OTU4NTk1NCwiZXhwIjoxNzg5NTg5NTU0fQ.0esGFDvhbtWKiWPuC3E_txVU50HtjmGOXDnc8MIClnU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-102",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801"
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (7).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/space/delete/6aaaf137d38311958019bc02",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "space",
+                "delete",
+                "6aaaf137d38311958019bc02"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "space-details",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{worktoken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-101",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801"
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (7).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/booking",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "booking",
+      "item": [
+        {
+          "name": "get booking",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{worktoken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-101",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801"
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (7).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/booking",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhYTlhNjVmMDhiOTljYjNjYjNkYWI4ZCIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc4OTU4NTk1NCwiZXhwIjoxNzg5NTg5NTU0fQ.0esGFDvhbtWKiWPuC3E_txVU50HtjmGOXDnc8MIClnU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-102",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801"
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (6).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/booking",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhYTlhNjVmMDhiOTljYjNjYjNkYWI4ZCIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc4OTU4NTk1NCwiZXhwIjoxNzg5NTg5NTU0fQ.0esGFDvhbtWKiWPuC3E_txVU50HtjmGOXDnc8MIClnU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-102",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801"
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (7).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/booking/update/6aaaf137d38311958019bc02",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "booking",
+                "update",
+                "6aaaf137d38311958019bc02"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "cancel booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhYTlhNjVmMDhiOTljYjNjYjNkYWI4ZCIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc4OTU4NTk1NCwiZXhwIjoxNzg5NTg5NTU0fQ.0esGFDvhbtWKiWPuC3E_txVU50HtjmGOXDnc8MIClnU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-102",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801"
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (7).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/booking/cancel/6aaaf137d38311958019bc02",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "booking",
+                "cancel",
+                "6aaaf137d38311958019bc02"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "approve booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhYTlhNjVmMDhiOTljYjNjYjNkYWI4ZCIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc4OTU4NTk1NCwiZXhwIjoxNzg5NTg5NTU0fQ.0esGFDvhbtWKiWPuC3E_txVU50HtjmGOXDnc8MIClnU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-102",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801"
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (7).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/booking/6aaaf137d38311958019bc02/approve",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "booking",
+                "6aaaf137d38311958019bc02",
+                "approve"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reject booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjZhYTlhNjVmMDhiOTljYjNjYjNkYWI4ZCIsImVtYWlsIjoiZGlsZWVwMm1hbHZpeWFAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc4OTU4NTk1NCwiZXhwIjoxNzg5NTg5NTU0fQ.0esGFDvhbtWKiWPuC3E_txVU50HtjmGOXDnc8MIClnU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Desk A-102",
+                  "type": "text",
+                  "uuid": "9d80bef1-4e11-447e-a31f-3361b95aa801"
+                },
+                {
+                  "key": "type",
+                  "value": "Desk",
+                  "type": "text",
+                  "uuid": "dca1d611-8fa1-4925-bf9f-b58031e17058"
+                },
+                {
+                  "key": "capacity",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a3c0138e-0ff5-4092-8c24-487ba1252fe1"
+                },
+                {
+                  "key": "amenities",
+                  "value": "[\n    \"WiFi\",\n    \"Power Outlet\",\n    \"Monitor\",\n    \"Ergonomic Chair\"\n  ]",
+                  "type": "text",
+                  "uuid": "8fa3262d-2569-4b24-a10e-e151a92f82cb"
+                },
+                {
+                  "key": "description",
+                  "value": "Comfortable workstation for individual use.",
+                  "type": "text",
+                  "uuid": "5d33fae0-69eb-43a5-b278-08a84af5e6b9"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "db1d07ec-cc82-4c45-ac48-bcf357e89670",
+                  "src": "/C:/Users/kkmalviya/OneDrive/Pictures/Screenshots/Screenshot (7).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/booking/6aaaf137d38311958019bc02/reject",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "booking",
+                "6aaaf137d38311958019bc02",
+                "reject"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "worktoken",
+      "value": ""
+    }
+  ]
+}

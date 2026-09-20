@@ -1,0 +1,64 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-container
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    env_file:
+      - ../backend/.env
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_listener", "5672"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:latest
+    container_name: redis-container
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  
+  work-space-backend:
+    container_name: work-space-backend
+
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+
+    env_file:
+      - ../backend/.env
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  work-space-frontend:
+    container_name: work-space-frontend
+
+    build:
+      context: ..
+      dockerfile: frontend/Dockerfile
+
+    ports:
+      - "5000:5000"
+
+
+
+volumes:
+  redis-data:
+  rabbitmq_data:

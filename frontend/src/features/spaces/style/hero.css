@@ -1,0 +1,87 @@
+.hero {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    justify-content: center;
+    background: #f8fbff;
+    padding: 15px;
+}
+
+.hero-container {
+    width: min(1200px, 90%);
+    text-align: center;
+}
+
+.hero span {
+    color: #2563eb;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.search-bar svg:first-child {
+    margin-left: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 22px;
+    font-size: 17px;
+}
+
+.search-bar button {
+    width: 85px;
+    height: 70px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.filter-card {
+    height: 70px;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.06);
+}
+
+.filter-card select,
+.filter-card input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+}
+
+.search-btn {
+    border: none;
+    border-radius: 16px;
+    background: #2563eb;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}

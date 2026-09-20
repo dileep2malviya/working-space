@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Created</title>
+</head>
+
+<body style="margin:0;padding:0;background:#f4f6f9;font-family:Arial,Helvetica,sans-serif;">
+
+    <table width="100%" cellpadding="0" cellspacing="0"
+        style="background:#f4f6f9;padding:40px 0;">
+
+        <tr>
+            <td align="center">
+
+                <table width="600" cellpadding="0" cellspacing="0"
+                    style="background:#ffffff;border-radius:10px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.1);">
+
+                    <tr>
+                        <td align="center"
+                            style="background:#2563eb;padding:30px;">
+
+                            <h1 style="margin:0;color:#ffffff;font-size:30px;">
+                                Booking Created
+                            </h1>
+
+                            <p style="margin-top:10px;color:#dbeafe;font-size:16px;">
+                                Your workspace booking request has been received.
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding:40px;color:#444444;">
+
+                            <h2 style="margin-top:0;">
+                                Hello, {{name}} 👋
+                            </h2>
+
+                            <p style="line-height:1.8;">
+                                Thank you for choosing
+                                <strong>Work Space</strong>.
+                                Your booking request has been created successfully
+                                and is currently awaiting admin approval.
+                            </p>
+
+                            <table
+                                width="100%"
+                                cellpadding="8"
+                                cellspacing="0"
+                                style="margin-top:25px;border-collapse:collapse;border:1px solid #e5e7eb;">
+
+                                <tr style="background:#f8fafc;">
+                                    <td><strong>Workspace</strong></td>
+                                    <td>{{spaceName}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Booking Date</strong></td>
+                                    <td>{{bookingDate}}</td>
+                                </tr>
+
+                                <tr style="background:#f8fafc;">
+                                    <td><strong>Time</strong></td>
+                                    <td>{{startTime}} - {{endTime}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Status</strong></td>
+                                    <td>
+                                        <span style="color:#d97706;font-weight:bold;">
+                                            Pending
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <p style="margin-top:30px;line-height:1.8;">
+                                Your booking request will be reviewed by our
+                                administrator. You'll receive another email once
+                                your booking has been approved or rejected.
+                            </p>
+
+
+                            <p style="margin-top:35px;line-height:1.8;">
+                                If you didn't create this booking, please contact
+                                our support team immediately.
+                            </p>
+
+                            <p style="margin-top:30px;">
+                                Best Regards,<br>
+                                <strong>Work Space Team</strong>
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+
+                        <td align="center"
+                            style="background:#f8fafc;padding:25px;color:#888888;font-size:13px;">
+
+                            <p style="margin:0;">
+                                © 2026 Work Space. All rights reserved.
+                            </p>
+
+                            <p style="margin-top:10px;">
+                                123 Business Street, Ahmedabad, Gujarat, India
+                            </p>
+
+                            <p style="margin-top:10px;">
+                                <a href="{{website}}"
+                                    style="color:#2563eb;text-decoration:none;">
+                                    Website
+                                </a>
+                                |
+                                <a href="{{support}}"
+                                    style="color:#2563eb;text-decoration:none;">
+                                    Support
+                                </a>
+                                |
+                                <a href="{{privacy}}"
+                                    style="color:#2563eb;text-decoration:none;">
+                                    Privacy Policy
+                                </a>
+                            </p>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
