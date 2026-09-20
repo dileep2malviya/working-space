@@ -8,6 +8,6 @@ RUN npm ci
 
 COPY frontend/ .
 
-EXPOSE 5000
+EXPOSE 5174
 
 CMD ["npm", "start"]
